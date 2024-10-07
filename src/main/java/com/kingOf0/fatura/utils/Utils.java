@@ -3,6 +3,7 @@ package com.kingOf0.fatura.utils;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.net.URLEncoder;
@@ -19,8 +20,8 @@ public class Utils {
         return UUID.randomUUID().toString();
     }
 
-    public static String encodeURIComponent(String s) {
-        return URLEncoder.encode(s, StandardCharsets.UTF_8)
+    public static String encodeURIComponent(String s) throws UnsupportedEncodingException {
+        return URLEncoder.encode(s, "UTF-8")
                 .replaceAll("\\+", "%20")
                 .replaceAll("%21", "!")
                 .replaceAll("%27", "'")
@@ -42,7 +43,7 @@ public class Utils {
         return publicMethods;
     }
 
-    public static <T> String encode(T object) throws JsonProcessingException {
+    public static <T> String encode(T object) throws JsonProcessingException, UnsupportedEncodingException {
         String s = objectMapper.writeValueAsString(object);
         System.out.println("Encoded: " + s);
         return Utils.encodeURIComponent(s);

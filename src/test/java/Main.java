@@ -5,7 +5,7 @@ import com.kingOf0.fatura.service.BasicInvoiceService;
 import com.kingOf0.fatura.service.InvoiceService;
 import com.kingOf0.fatura.utils.HttpUtils;
 
-import java.util.List;
+import java.util.Arrays;
 
 public class Main {
 
@@ -24,7 +24,7 @@ public class Main {
                     "12345678901",
                     "Test Name",
                     "Test Surname",
-                    List.of(new BasicInvoiceItem("Elma", 1, "ADET", 50.0, 20.0))
+                    Arrays.asList(new BasicInvoiceItem("Elma", 1, "ADET", 50.0, 20.0))
             );
 
             Invoice invoice = BasicInvoiceService.createBasicInvoice(basicInvoice);
