@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'maven-publish'
 }
 
 group = 'com.kingOf0.fatura'
@@ -15,4 +16,20 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = 'com.kingOf0'
+            artifactId = 'kfatura'
+            version = '1.0-SNAPSHOT'
+            from components.java
+
+            pom {
+                name = 'KFatura'
+                description = 'EArsiv portal fatura entegrasyonu'
+            }
+        }
+    }
 }
