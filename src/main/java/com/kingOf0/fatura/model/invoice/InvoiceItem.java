@@ -12,6 +12,7 @@ public class InvoiceItem {
     private String iskontoNedeni = "";
     private String malHizmetTutari = "1";
     private String vergiOrani = "0";
+    private String kdvOrani = "20";
     private String kdvTutari = "0";
     private String vergininKdvTutari = "0";
     private String ozelMatrahTutari = "0";
@@ -99,6 +100,14 @@ public class InvoiceItem {
 
     public String getKdvTutari() {
         return kdvTutari;
+    }
+
+    public String getKdvOrani() {
+        return kdvOrani;
+    }
+
+    public void setKdvOrani(String kdvOrani) {
+        this.kdvOrani = kdvOrani;
     }
 
     public void setKdvTutari(String kdvTutari) {

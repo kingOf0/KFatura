@@ -51,8 +51,9 @@ public class BasicInvoiceService {
         double d = item.getQuantity() * item.getUnitPrice();
         invoiceItem.setFiyat(String.valueOf(d));
 
-        invoiceItem.setVergiOrani(item.getTaxRate().toString());
+        invoiceItem.setKdvOrani(item.getTaxRate().toString());
         invoiceItem.setKdvTutari(String.valueOf(d * item.getTaxRate() / 100));
+
         return invoiceItem;
     }
 

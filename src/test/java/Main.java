@@ -24,7 +24,7 @@ public class Main {
                     "12345678901",
                     "Test Name",
                     "Test Surname",
-                    Arrays.asList(new BasicInvoiceItem("Elma", 1, "ADET", 50.0, 20.0))
+                    Arrays.asList(new BasicInvoiceItem("Elma", 1, "ADET", 50.0, 20))
             );
 
             Invoice invoice = BasicInvoiceService.createBasicInvoice(basicInvoice);

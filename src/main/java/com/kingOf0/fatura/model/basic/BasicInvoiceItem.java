@@ -6,9 +6,9 @@ public class BasicInvoiceItem {
     private final Integer quantity;
     private final String unit;
     private final Double unitPrice;
-    private final Double taxRate; //20
+    private final Integer taxRate; //20
 
-    public BasicInvoiceItem(String name, Integer quantity, String unit, Double unitPrice, Double taxRate) {
+    public BasicInvoiceItem(String name, Integer quantity, String unit, Double unitPrice, Integer taxRate) {
         this.name = name;
         this.quantity = quantity;
         this.unit = unit;
@@ -20,7 +20,7 @@ public class BasicInvoiceItem {
         return name;
     }
 
-    public Double getTaxRate() {
+    public Integer getTaxRate() {
         return taxRate;
     }
 
