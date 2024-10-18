@@ -23,7 +23,7 @@ publishing {
         maven(MavenPublication) {
             groupId = 'com.kingOf0'
             artifactId = 'kfatura'
-            version = '1.0-SNAPSHOT'
+            version = '1.3-SNAPSHOT'
             from components.java
 
             pom {

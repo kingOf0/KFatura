@@ -36,6 +36,7 @@ public class BasicInvoiceService {
         invoice.setMalhizmetToplamTutari(String.valueOf(sum));
         invoice.setHesaplanankdv(String.valueOf(taxSum));
         invoice.setOdenecekTutar(String.valueOf(finalSum));
+        invoice.setVergilerDahilToplamTutar(String.valueOf(finalSum));
         return invoice;
     }
 

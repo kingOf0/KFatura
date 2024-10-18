@@ -21,6 +21,10 @@ public class InvoiceService {
         return jsonNode.get("token").asText();
     }
 
+    public void logout(String token) {
+        createCommand(token, "logout");
+    }
+
     public HttpUtils.Response createDraftInvoiceCommand(String token, Invoice invoice) {
         String payload;
         try {
@@ -35,6 +39,12 @@ public class InvoiceService {
 
     private HttpUtils.Response createCommand(String token, String cmd, String pageName, String payload) {
         String body = String.format("cmd=%s&callid=%s&pageName=%s&token=%s&jp=%s", cmd, Utils.generateUUID(), pageName, token, payload);
+
+        return HttpUtils.postRequest(Environment.getBaseUrl() + Environment.getCommandPath(), body);
+    }
+
+    private HttpUtils.Response createCommand(String token, String cmd) {
+        String body = String.format("cmd=%s&token=%s", cmd, token);
 
         return HttpUtils.postRequest(Environment.getBaseUrl() + Environment.getCommandPath(), body);
     }
